@@ -8,3 +8,8 @@ spring:
           uri: https://github.com/grekier/cloud-config
   application:
     name: configserver
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
