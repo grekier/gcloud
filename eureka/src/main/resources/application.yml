@@ -4,3 +4,13 @@ eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
+spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:8000
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
