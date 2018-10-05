@@ -1,4 +1,4 @@
-package com.osnode.gcloud.eureka
+package com.osnode.gcloud.turbine
 
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner
 
 @RunWith(SpringRunner::class)
 @SpringBootTest
-class EurekaApplicationTests {
+class TurbineApplicationTests {
 
     @Test
     fun contextLoads() {
