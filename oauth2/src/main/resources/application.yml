@@ -1,0 +1,15 @@
+server:
+  port: 8899
+  servlet:
+    context-path: /gc-oauth2
+  use-forward-headers: true
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: ${server.servlet.context-path}/actuator/health
+    metadata-map:
+      management.context-path: ${server.servlet.context-path}/actuator
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/

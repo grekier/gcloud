@@ -22,6 +22,7 @@
         <module>config</module>
         <module>eureka</module>
         <module>turbine</module>
+        <module>oauth2</module>
     </modules>
 
     <properties>
