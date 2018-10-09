@@ -58,6 +58,7 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
                 .authorizeRequests()
                 .antMatchers("/actuator").permitAll()
                 .antMatchers("/actuator/**").permitAll()
+                .antMatchers("/hystrix.stream").permitAll()
                 .anyRequest().authenticated()
     }
 }

@@ -11,3 +11,6 @@ eureka:
     registryFetchIntervalSeconds: 5
     serviceUrl:
       defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
+turbine:
+  cluster-name-expression: new String("default")
+  app-config: gcloud-oauth2,gcloud-service1,gcloud-service2
