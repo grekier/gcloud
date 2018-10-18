@@ -8,4 +8,4 @@ spring:
   boot:
     admin:
       client:
-        url: http://localhost:8000
+        url: http://${ADMIN_SERVICE_URL:localhost:8000}

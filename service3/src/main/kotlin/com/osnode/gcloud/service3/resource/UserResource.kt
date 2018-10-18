@@ -1,4 +1,4 @@
-package com.osnode.gcloud.service2.resource
+package com.osnode.gcloud.service3.resource
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty
@@ -18,7 +18,7 @@ class UserResource(@Autowired private val restTemplate: OAuth2RestTemplate) {
     )
     fun me(): String {
         try {
-            return restTemplate.getForObject("http://gcloud-service1/users/me", String::class.java)!!
+            return restTemplate.getForObject("http://gcloud-service2/users/me", String::class.java)!!
         } catch (e: Exception) {
             println(e)
             throw e
@@ -26,6 +26,6 @@ class UserResource(@Autowired private val restTemplate: OAuth2RestTemplate) {
     }
 
     fun defaultMe(): String {
-        return "Hello default from service 2"
+        return "Hello default from service 3"
     }
 }
