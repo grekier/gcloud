@@ -95,8 +95,8 @@ components:
       - name: "gcloud-bridge"
       publish_all: true
       ports:
-      - host_port: "8002"
-        container_port: "8002"
+      - host_port: "8001"
+        container_port: "8001"
       restart_policy: "no"
   gcloud-eureka:
     type: "App.Container"
