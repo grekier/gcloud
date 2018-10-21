@@ -91,4 +91,35 @@
 		</dependency>
 	</dependencies>
 
+	<profiles>
+		<profile>
+			<id>docker</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.spotify</groupId>
+						<artifactId>dockerfile-maven-plugin</artifactId>
+						<version>1.4.7</version>
+						<configuration>
+							<repository>grekier/gcloud</repository>
+							<tag>${project.artifactId}-${project.version}</tag>
+							<buildArgs>
+								<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+							</buildArgs>
+						</configuration>
+						<executions>
+							<execution>
+								<id>default</id>
+								<phase>install</phase>
+								<goals>
+									<goal>build</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
 </project>
