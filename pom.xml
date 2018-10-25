@@ -18,11 +18,11 @@
     </parent>
 
     <modules>
-        <module>admin</module>
         <module>config</module>
         <module>eureka</module>
-        <module>turbine</module>
+        <module>admin</module>
         <module>oauth2</module>
+        <module>turbine</module>
         <module>service1</module>
         <module>service2</module>
         <module>service3</module>
