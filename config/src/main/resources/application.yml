@@ -25,4 +25,4 @@ management:
       show-details: ALWAYS
 logging:
   level:
-    org.springframework.cloud.config.server: DEBUG
+    org.springframework.cloud.config.server: INFO

@@ -9,6 +9,7 @@ eureka:
     health-check-url-path: ${server.servlet.context-path}/actuator/health
     metadata-map:
       management.context-path: ${server.servlet.context-path}/actuator
+    hostname: ${DOCKER_HOSTNAME:localhost}
   client:
     registryFetchIntervalSeconds: 5
     serviceUrl:

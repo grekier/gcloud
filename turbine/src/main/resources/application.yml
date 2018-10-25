@@ -7,6 +7,7 @@ eureka:
   instance:
     leaseRenewalIntervalInSeconds: 10
     health-check-url-path: /actuator/health
+    hostname: ${DOCKER_HOSTNAME:localhost}
   client:
     registryFetchIntervalSeconds: 5
     serviceUrl:

@@ -3,6 +3,7 @@ server:
 eureka:
   instance:
     leaseRenewalIntervalInSeconds: 10
+    hostname: ${DOCKER_HOSTNAME:localhost}
   client:
     registryFetchIntervalSeconds: 5
     serviceUrl:
