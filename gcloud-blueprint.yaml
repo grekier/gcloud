@@ -1,0 +1,133 @@
+---
+name: "GCLOUD"
+components:
+  gcloud-oauth2:
+    type: "App.Container"
+    data:
+      name: "gcloud-oauth2"
+      image: "registry.hub.docker.com/grekier/gcloud:oauth2-0.0.1-SNAPSHOT"
+      _cluster: 1
+      hostname: "gcloud-oauth2"
+      networks:
+      - name: "gcloud-bridge"
+      publish_all: true
+      ports:
+      - host_port: "8899"
+        container_port: "8899"
+      restart_policy: "no"
+  gcloud-service2:
+    type: "App.Container"
+    data:
+      name: "gcloud-service2"
+      image: "registry.hub.docker.com/grekier/gcloud:service2-0.0.1-SNAPSHOT"
+      _cluster: 1
+      hostname: "gcloud-service2"
+      networks:
+      - name: "gcloud-bridge"
+      publish_all: true
+      ports:
+      - host_port: "8002"
+        container_port: "8002"
+      restart_policy: "no"
+  gcloud-service3:
+    type: "App.Container"
+    data:
+      name: "gcloud-service3"
+      image: "registry.hub.docker.com/grekier/gcloud:service3-0.0.1-SNAPSHOT"
+      _cluster: 1
+      hostname: "gcloud-service3"
+      networks:
+      - name: "gcloud-bridge"
+      publish_all: true
+      ports:
+      - host_port: "8003"
+        container_port: "8003"
+      restart_policy: "no"
+  gcloud-turbine:
+    type: "App.Container"
+    data:
+      name: "gcloud-turbine"
+      image: "registry.hub.docker.com/grekier/gcloud:turbine-0.0.1-SNAPSHOT"
+      _cluster: 1
+      networks:
+      - name: "gcloud-bridge"
+      publish_all: true
+      ports:
+      - host_port: "8989"
+        container_port: "8989"
+      restart_policy: "no"
+  gcloud-config:
+    type: "App.Container"
+    data:
+      name: "gcloud-config"
+      image: "registry.hub.docker.com/grekier/gcloud:config-0.0.1-SNAPSHOT"
+      _cluster: 1
+      hostname: "gcloud-config"
+      networks:
+      - name: "gcloud-bridge"
+      publish_all: true
+      ports:
+      - host_port: "8888"
+        container_port: "8888"
+      restart_policy: "no"
+  zipkin:
+    type: "App.Container"
+    data:
+      name: "zipkin"
+      image: "registry.hub.docker.com/openzipkin/zipkin"
+      _cluster: 1
+      hostname: "zipkin"
+      networks:
+      - name: "gcloud-bridge"
+      publish_all: true
+      ports:
+      - host_port: "9411"
+        container_port: "9411"
+      restart_policy: "no"
+  gcloud-service1:
+    type: "App.Container"
+    data:
+      name: "gcloud-service1"
+      image: "registry.hub.docker.com/grekier/gcloud:service1-0.0.1-SNAPSHOT"
+      _cluster: 1
+      hostname: "gcloud-service1"
+      networks:
+      - name: "gcloud-bridge"
+      publish_all: true
+      ports:
+      - host_port: "8001"
+        container_port: "8001"
+      restart_policy: "no"
+  gcloud-eureka:
+    type: "App.Container"
+    data:
+      name: "gcloud-eureka"
+      image: "registry.hub.docker.com/grekier/gcloud:eureka-0.0.1-SNAPSHOT"
+      _cluster: 1
+      hostname: "gcloud-eureka"
+      networks:
+      - name: "gcloud-bridge"
+      publish_all: true
+      ports:
+      - host_port: "8761"
+        container_port: "8761"
+      restart_policy: "no"
+  gcloud-admin:
+    type: "App.Container"
+    data:
+      name: "gcloud-admin"
+      image: "registry.hub.docker.com/grekier/gcloud:admin-0.0.1-SNAPSHOT"
+      _cluster: 1
+      hostname: "gcloud-admin"
+      networks:
+      - name: "gcloud-bridge"
+      publish_all: true
+      ports:
+      - host_port: "8000"
+        container_port: "8000"
+      restart_policy: "no"
+  gcloud-bridge:
+    type: "App.Network"
+    data:
+      name: "gcloud-bridge"
+      external: false

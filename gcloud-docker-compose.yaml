@@ -1,0 +1,77 @@
+---
+version: "2"
+services:
+  gcloud-service2:
+    image: "registry.hub.docker.com/grekier/gcloud:service2-0.0.1-SNAPSHOT"
+    hostname: "gcloud-service2"
+    ports:
+    - "8002:8002"
+    restart: "no"
+    networks:
+    - "gcloud-bridge"
+  gcloud-oauth2:
+    image: "registry.hub.docker.com/grekier/gcloud:oauth2-0.0.1-SNAPSHOT"
+    hostname: "gcloud-oauth2"
+    ports:
+    - "8899:8899"
+    restart: "no"
+    networks:
+    - "gcloud-bridge"
+  gcloud-service3:
+    image: "registry.hub.docker.com/grekier/gcloud:service3-0.0.1-SNAPSHOT"
+    hostname: "gcloud-service3"
+    ports:
+    - "8003:8003"
+    restart: "no"
+    networks:
+    - "gcloud-bridge"
+  gcloud-turbine:
+    image: "registry.hub.docker.com/grekier/gcloud:turbine-0.0.1-SNAPSHOT"
+    ports:
+    - "8989:8989"
+    restart: "no"
+    networks:
+    - "gcloud-bridge"
+  gcloud-config:
+    image: "registry.hub.docker.com/grekier/gcloud:config-0.0.1-SNAPSHOT"
+    hostname: "gcloud-config"
+    ports:
+    - "8888:8888"
+    restart: "no"
+    networks:
+    - "gcloud-bridge"
+  zipkin:
+    image: "registry.hub.docker.com/openzipkin/zipkin"
+    hostname: "zipkin"
+    ports:
+    - "9411:9411"
+    restart: "no"
+    networks:
+    - "gcloud-bridge"
+  gcloud-service1:
+    image: "registry.hub.docker.com/grekier/gcloud:service1-0.0.1-SNAPSHOT"
+    hostname: "gcloud-service1"
+    ports:
+    - "8001:8001"
+    restart: "no"
+    networks:
+    - "gcloud-bridge"
+  gcloud-eureka:
+    image: "registry.hub.docker.com/grekier/gcloud:eureka-0.0.1-SNAPSHOT"
+    hostname: "gcloud-eureka"
+    ports:
+    - "8761:8761"
+    restart: "no"
+    networks:
+    - "gcloud-bridge"
+  gcloud-admin:
+    image: "registry.hub.docker.com/grekier/gcloud:admin-0.0.1-SNAPSHOT"
+    hostname: "gcloud-admin"
+    ports:
+    - "8000:8000"
+    restart: "no"
+    networks:
+    - "gcloud-bridge"
+networks:
+  gcloud-bridge:
+    external: false
