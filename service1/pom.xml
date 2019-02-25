@@ -103,7 +103,7 @@
                     <plugin>
                         <groupId>com.spotify</groupId>
                         <artifactId>dockerfile-maven-plugin</artifactId>
-                        <version>1.4.7</version>
+                        <version>1.4.10</version>
                         <configuration>
                             <repository>grekier/gcloud</repository>
                             <tag>${project.artifactId}-${project.version}</tag>
